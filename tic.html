@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function() {
+                var count = 0;
+                $('button').on('click', function(){
+                    var X = 'X';
+                    var O = 'O';
+                    var str = $(this).text();
+                    count++;
+                    if(!(X == str || O == str)){
+                        if(count %2 == 0){
+                            $(this).text('X');
+                            $(this).css('background-color', 'red');
+                            // second time. if 5 is open, you get it!
+                            if(count == 2){
+                                if('#3' != O){
+                                    $('#3').text('X');
+                                    $('#3').css('background-color', 'red');
+                                }
+                            }
+                            // fourth time. if 9 is open, you get it!
+                            if(count == 4){
+                                if('#9' != O){
+                                    $('#9').text('X');
+                                    $('#9').css('background-color', 'red');
+                                }
+                            }
+                            // sixth time. if 6 is open, you get it!
+                            if(count == 6){
+                                if('#1' != O){
+                                    $('#1').text('X');
+                                    $('#1').css('background-color', 'red');
+                                }
+                            }
+                            // if there is my eith time. you get 7
+                            if(count == 8){
+                                if('#7' != O){
+                                    $('#7').text('X');
+                                    $('#7').css('background-color', 'red');
+                                }
+                            }
+                        }
+                        else{
+                            $(this).text('O');
+                            $(this).css('background-color', 'lightgreen');
+                        }
+                        var board = [
+                            [$('#1').text(), $('#2').text(), $('#3').text()],
+                            [$('#4').text(), $('#5').text(), $('#6').text()],
+                            [$('#7').text(), $('#8').text(), $('#9').text()]
+                        ]
+                    }
+                    else{
+                        return ;
+                    }
+                });
+            });
+
+            $(document).ready(function() {
+                $('button:odd').css('background-color','white');
+            });
+
+        </script>
+        <style>
+        .head{
+            background-color: yellow;
+            display: block;
+        }
+
+        .or{
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .maru{
+            font-size: 100px;
+            background-color: lightgreen;
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+        }
+
+        .batu{
+            font-size: 100px;
+            background-color: red;
+            display: inline-block;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            margin-right: 30%;
+        }
+
+
+        .wrapper{
+            background-color: gray;
+            height: 300px;
+            width: 300px;
+            margin-left: 40%;
+            margin-top: 50px;
+            border-radius: 3px;
+        }
+        button{
+            background-color: lightgray;
+            height: 100px;
+            width: 100px;
+            border: 0.2px solid gray;
+            border-radius: 3px;
+            float: left;
+        }
+        </style>
+        <title>tic</title>
+    </head>
+    <body>
+
+    <div class="head">
+        <div class="maru">
+            <i class="fa fa-circle-o" aria-hidden="true"></i>
+        </div>
+        <h3 class="or">or</h3>
+        <div class="batu">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+    </div>
+
+        <div class="wrapper">
+            <button id="1"></button>
+            <button id="2"></button>
+            <button id="3"></button>
+            <button id="4"></button>
+            <button id="5"></button>
+            <button id="6"></button>
+            <button id="7"></button>
+            <button id="8"></button>
+            <button id="9"></button>
+        </div>
+    </body>
+</html>
