@@ -1,8 +1,8 @@
-# Made a funny TicTacToe game using JQuery (No one will never beat me).
+# Made a funny TicTacToe game using JQuery (No one will ever beat me).
 
-### When I add a X, it automatically adds another X to the table. So I will never lose! lol
+### When I add a X, it automatically adds another X to the table. So I will ever lose! lol
 
-#### 1:
+#### 1: This is the TicTacToe game table.
 ![alt screenshot](img_4_tic/Tic_1.png)
 
 #### 2: The person adds O to the table.
